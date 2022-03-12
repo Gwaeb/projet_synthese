@@ -3,7 +3,7 @@
 Pour faire fonctionner le projet:
 
 1) Probablement un "npm i" soit à la racine, soit dans "/Angular"
-2) Je ne sais plus s'il faut faire quelque chose dans le "/Rails"
+2) Bundle install dans le "/Rails"
 
 
 Pour faire fonctionner sur le localhost:
