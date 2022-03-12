@@ -1,0 +1,173 @@
+<div class="pageTitle">
+  <h1>Modification d'une page de runes</h1>
+</div>
+<div id="contentWrapper">
+  <form
+    [formGroup]="editPageForm"
+    (ngSubmit)="editPage()"
+    *ngIf="mainRunes && secondaryRunes && shardsRunes"
+  >
+    <div id="mainRune" class="content">
+      <div id="toCenter">
+        <div id="mainCategories">
+          <div *ngFor="let category of categories">
+            <div *ngIf="category.name != 'Other'">
+              <img
+                class="pointer"
+                src="{{category.picture_path}}"
+                alt=""
+                (click)="changeMainCategory(category)"
+              />
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div id="mainLvl0">
+          <div *ngFor="let mainRune of mainRunes">
+            <app-img-runes
+              [form]="editPageForm"
+              [runeNumber]="0"
+              *ngIf="mainRune.level == 0"
+              id="test"
+              [rune]="mainRune"
+            ></app-img-runes>
+          </div>
+        </div>
+        <hr />
+        <div id="mainLvl1">
+          <div *ngFor="let mainRune of mainRunes">
+            <app-img-runes
+              [form]="editPageForm"
+              [runeNumber]="1"
+              *ngIf="mainRune.level == 1"
+              [rune]="mainRune"
+            ></app-img-runes>
+          </div>
+        </div>
+        <hr />
+        <div id="mainLvl2">
+          <div *ngFor="let mainRune of mainRunes">
+            <app-img-runes
+              [form]="editPageForm"
+              [runeNumber]="2"
+              *ngIf="mainRune.level == 2"
+              [rune]="mainRune"
+            ></app-img-runes>
+          </div>
+        </div>
+        <hr />
+        <div id="mainLvl3">
+          <div *ngFor="let mainRune of mainRunes">
+            <app-img-runes
+              [form]="editPageForm"
+              [runeNumber]="3"
+              *ngIf="mainRune.level == 3"
+              [rune]="mainRune"
+            ></app-img-runes>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="wrapperSecondaryShardsButtons">
+      <div id="secondaryRune" class="content">
+        <div id="secondaryCategories">
+          <div *ngFor="let category of categories">
+            <div
+              *ngIf="category.name != 'Other' && category.id != mainRunes[0].category_id"
+            >
+              <img
+                class="pointer"
+                src="{{category.picture_path}}"
+                (click)="changeSecondCategory(category)"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div id="secondaryLvl1">
+          <div *ngFor="let secondaryRune of secondaryRunes">
+            <app-img-runes
+              [form]="editPageForm"
+              [runeNumber]="4"
+              *ngIf="secondaryRune.level == 1"
+              [rune]="secondaryRune"
+            ></app-img-runes>
+          </div>
+        </div>
+        <hr />
+        <div id="secondaryLvl2">
+          <div *ngFor="let secondaryRune of secondaryRunes">
+            <app-img-runes
+              [form]="editPageForm"
+              [runeNumber]="4"
+              *ngIf="secondaryRune.level == 2"
+              [rune]="secondaryRune"
+            ></app-img-runes>
+          </div>
+        </div>
+        <hr />
+        <div id="secondaryLvl3">
+          <div *ngFor="let secondaryRune of secondaryRunes">
+            <app-img-runes
+              [form]="editPageForm"
+              [runeNumber]="5"
+              *ngIf="secondaryRune.level == 3"
+              [rune]="secondaryRune"
+            ></app-img-runes>
+          </div>
+        </div>
+      </div>
+
+      <div id="wrapperShardsButtons">
+        <div id="shards" class="content">
+          <div id="shardsCategories">
+            <div id="shardsLvl1">
+              <div *ngFor="let row of [0,1,2]">
+                <app-img-runes
+                  [form]="editPageForm"
+                  [runeNumber]="6"
+                  [rune]="shardsRunes[row]"
+                ></app-img-runes>
+              </div>
+            </div>
+            <hr />
+            <div id="shardsLvl2">
+              <div *ngFor="let row of [0,3,4]">
+                <app-img-runes
+                  [form]="editPageForm"
+                  [runeNumber]="7"
+                  [rune]="shardsRunes[row]"
+                ></app-img-runes>
+              </div>
+            </div>
+            <hr />
+            <div id="shardsLvl3">
+              <div *ngFor="let row of [5,3,4]">
+                <app-img-runes
+                  [form]="editPageForm"
+                  [runeNumber]="8"
+                  [rune]="shardsRunes[row]"
+                ></app-img-runes>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="buttons">
+          <input
+            class="content"
+            type="text"
+            formControlName="name"
+            id="name"
+            placeholder="Nom"
+          />
+          <button id="add" type="submit" [disabled]="editPageForm.invalid">
+            Enregistrer
+          </button>
+          <button id="cancel" (click)="cancel()">Annuler</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

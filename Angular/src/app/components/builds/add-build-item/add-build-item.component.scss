@@ -1,0 +1,21 @@
+@import "../../../../mixins.scss";
+@import "../../../../variables.scss";
+
+#item {
+  margin: 20px;
+  height: 125px;
+  #selectWrapper {
+    @include flex(column wrap, center);
+    select {
+      background-color: $gray;
+      font-size: 16px;
+
+      margin: 10px;
+    }
+    img {
+      margin-bottom: 10px;
+      width: 64px;
+      height: 64px;
+    }
+  }
+}

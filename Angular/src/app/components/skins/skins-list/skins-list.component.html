@@ -1,0 +1,11 @@
+<h3 class="pageTitle">{{ title }}</h3>
+<div id="skin_list">
+  <div *ngIf="filteredSkins == null || filteredSkins.length == 0">
+    <h4><u>Aucun skin dans la liste!</u></h4>
+  </div>
+  <div *ngFor="let skin of filteredSkins">
+    <app-skins-list-item [skin]="skin" (skinDelete)="deleteSkin($event)"></app-skins-list-item>
+  </div>
+  <app-delete *ngIf="skin" [show]="show" [name]="skin.name" (deleteEvent)="deleteResult($event)" (closeEvent)="closeEvent()"></app-delete>
+</div>
+

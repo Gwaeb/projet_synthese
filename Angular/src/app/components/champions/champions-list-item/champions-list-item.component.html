@@ -1,0 +1,26 @@
+<div class="content">
+  <div id="pictureContent">
+    <img
+      src="{{ champion.picture_path }}"
+      alt="{{ champion.name }}"
+      width="200px"
+      height="391.625px"
+    />
+    <div id="buttons">
+      <button *ngIf="!isAdd && !isEdit" id="replace" (click)="editChamp()">
+        Remplacer
+      </button>
+      <button *ngIf="!isAdd && !isEdit" id="delete" (click)="deleteChamp()">
+        Supprimer
+      </button>
+      <button *ngIf="isAdd" id="add" (click)="addChamp()">Ajouter</button>
+      <button *ngIf="isEdit" id="add" (click)="updateChamp()">Choisir</button>
+    </div>
+  </div>
+  <div id="texts">
+    <h4 class="textOverflow">
+      {{ champion.name }}
+    </h4>
+    <p>{{ champion.price }} BE</p>
+  </div>
+</div>

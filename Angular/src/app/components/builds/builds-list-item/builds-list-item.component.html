@@ -1,0 +1,39 @@
+<div class="content">
+  <div id="forButtonsRelative">
+    <div id="titleContainer">
+      <h4 class="textOverflow">
+        {{ build.name }}
+      </h4>
+    </div>
+    <div id="itemsList">
+      <div *ngFor="let item of build.items">
+        <img
+          src="{{ item.picture_path }}"
+          alt="{{ item.name }}"
+          title="{{ item.name }} - {{ item.description }}"
+          width="50px"
+          height="50px"
+        />
+      </div>
+      <div *ngFor="let ei of emptyItems">
+        <img
+          src="../../../../assets/pictures/no_item.png"
+          alt="No item"
+          title="No item"
+          width="50px"
+          height="50px"
+        />
+      </div>
+    </div>
+    <div id="buttons">
+      <div id="wrapButtons">
+        <button id="edit" class="pointer" (click)="editBuild()">
+          Modifier
+        </button>
+        <button id="delete" class="pointer" (click)="deleteBuild()">
+          Supprimer
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

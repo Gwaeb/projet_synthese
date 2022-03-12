@@ -1,0 +1,45 @@
+<div class="pageTitle">
+  <h1>Modification d'une planification</h1>
+</div>
+<div id="bodyWrapper">
+  <form  [formGroup]="editPlanningForm" (ngSubmit)="editPlanning()">
+    <div class="content" id="friends">
+      <h2>Amis ({{ friendCount }}/4)</h2>
+      <input
+        type="search"
+        id="search"
+        class="content search"
+        placeholder="Recherche..."
+        #name
+        (input)="changeName(name.value)"
+      />
+      <div formArrayName="friends">
+        <input type="hidden" [formControlName]="0" />
+      </div>
+      <div id="friendsWrapper" >
+        <div *ngFor="let friend of filteredAllFriends; let i = index">
+          <input [id]="friend.id" type="checkbox" [checked]="friend.checked" [name]="i.toString()" (click)="changeSelection(friend, $event)" />
+          <label [for]="friend.id">{{ friend.name }}</label>
+        </div>
+      </div>
+    </div>
+    <div id="inputs">
+      <div id="nameDate">
+        <input
+          type="text"
+          placeholder="Nom de la planification..."
+          class="content"
+          formControlName="title"
+          id="name"
+        />
+
+        <input id="date" type="datetime-local" class="content" formControlName="date" min="{{ today }}"/>
+        <p *ngIf="dateErrors">{{ dateErrors }}</p>
+      </div>
+      <div id="buttons">
+        <button id="save" [disabled]="editPlanningForm.invalid" type="submit">Enregistrer</button>
+        <button id="cancel" (click)="cancel()">Annuler</button>
+      </div>
+    </div>
+  </form>
+</div>

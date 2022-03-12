@@ -1,0 +1,33 @@
+<div class="content">
+  <div id="forPositionRelative">
+    <p id="date">
+      {{ formattedDate }}
+    </p>
+    <h4 id="title" class="textOverflow">
+      <u>Titre:</u> <br />{{ planning.title }}
+    </h4>
+
+    <h4 id="guesses"><u>Invités: </u>({{ planning.friends.length}}/4)</h4>
+    <div id="guessesWrapper">
+      <div *ngFor="let friend of planning.friends" class="guess textOverflow">
+        <span
+        [class.user-pending] = "friend.accepted == null"
+        [class.user-accepted] = "friend.accepted"
+        >{{ friend.name }}</span>
+      </div>
+    </div>
+    <h4 id="creator" class="textOverflow">
+      Créateur: {{ planning.creator.name }}
+    </h4>
+
+    <div id="buttons">
+      <div id="owner" *ngIf="canEdit">
+        <button id="edit" (click)="editPlanning()" [disabled]="date < now">Modifier</button>
+        <button id="delete" (click)="deletePlanning()">Supprimer</button>
+      </div>
+      <div id="notOwner" *ngIf="!canEdit">
+        <button id="deny" (click)="denyPlanning()">Refuser</button>
+      </div>
+    </div>
+  </div>
+</div>

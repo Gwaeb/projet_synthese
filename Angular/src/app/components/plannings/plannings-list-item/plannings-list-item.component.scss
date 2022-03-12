@@ -1,0 +1,93 @@
+@import "../../../../variables.scss";
+@import "../../../../mixins.scss";
+
+.content {
+  margin: 10px;
+  padding: 10px;
+  max-width: 215px;
+  #forPositionRelative {
+    #date {
+      width: 195px;
+      text-align: center;
+    }
+    #title {
+      max-width: 195px;
+    }
+    #guesses {
+      margin-bottom: 5px;
+    }
+    #guessesWrapper {
+      min-height: 90px;
+      .guess {
+        max-width: 195px;
+      }
+    }
+    #creator {
+      max-width: 195px;
+      margin-bottom: 5px;
+    }
+    #buttons {
+      display: none;
+    }
+  }
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+    #forPositionRelative {
+      position: relative;
+
+      #date {
+        color: $dark-gold;
+      }
+      #guessesWrapper {
+        .guess {
+          .user-pending {
+            color: rgb(71, 71, 71);
+          }
+          .user-accepted {
+            color: rgb(9, 63, 9);
+          }
+        }
+      }
+      h4 {
+        color: $dark-gold;
+        u {
+          color: $dark-gold;
+        }
+      }
+
+      #buttons {
+        display: block;
+        #owner {
+          position: absolute;
+          top: 50px;
+          left: 12px;
+          @include flex(column wrap, center);
+          #edit {
+            @include button($gray);
+            margin-bottom: 50px;
+          }
+          #delete {
+            @include button($dark-red);
+          }
+        }
+        #notOwner {
+          position: absolute;
+          top: 95px;
+          left: 25px;
+          #deny {
+            @include button($dark-red);
+          }
+        }
+      }
+    }
+  }
+}
+
+.user-accepted {
+  color: rgb(24, 196, 24);
+}
+
+.user-pending {
+  color: lightgray;
+}

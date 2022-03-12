@@ -1,0 +1,2 @@
+abc: <%= ActiveStorage::FixtureSet.blob filename: "Infinity_Edge_item.png", service_name: "test_fixture" %>
+

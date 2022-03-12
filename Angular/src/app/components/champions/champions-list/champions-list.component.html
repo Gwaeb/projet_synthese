@@ -1,0 +1,11 @@
+
+<h3 class="pageTitle">{{ title }}</h3>
+<div id="champion_list">
+  <div *ngIf="filteredChampions == null || filteredChampions.length == 0">
+    <h4><u>Aucun champion dans la liste!</u></h4>
+  </div>
+  <div *ngFor="let champion of filteredChampions">
+    <app-champions-list-item [champion]="champion" (championDelete)="deleteChampion($event)"></app-champions-list-item>
+  </div>
+  <app-delete *ngIf="champion" [show]="show" [name]="champion.name" (deleteEvent)="deleteResult($event)" (closeEvent)="closeEvent()"></app-delete>
+</div>

@@ -1,0 +1,9 @@
+<div id="runes_list">
+  <div *ngIf="filteredRunesPages == null || filteredRunesPages.length == 0">
+    <h4><u>Aucune page de runes dans la liste!</u></h4>
+  </div>
+  <div *ngFor="let runePage of filteredRunesPages">
+    <app-runes-list-item [runePage]="runePage" (pageDelete)="deletePage($event)"></app-runes-list-item>
+  </div>
+  <app-delete *ngIf="page" [show]="show" [name]="page.name" [message]="page.used? 'La page de rune  \''+ page.name+'\'  est utilisé dans ' + page.used + ' partie' + (page.used > 1? 's': '')+', êtes-vous certain de vouloir la supprimer?' : null" (deleteEvent)="deleteResult($event)" (closeEvent)="closeEvent()"></app-delete>
+</div>

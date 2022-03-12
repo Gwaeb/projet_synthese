@@ -1,0 +1,35 @@
+<h1>Amis</h1>
+<div class="container">
+  <div class="content add">
+    <h3>Ajouter un ami</h3>
+    <input type="text" placeholder="Nom d'invocateur..." class="content">
+    <br/>
+    <div class="content" id="players">
+      <!--Liste des joueurs trouvés avec le champs de recherche-->
+      <button class="inputFriends">+</button>
+      <p class="friendsName">Rekkles</p>
+      <br/>
+      <button class="inputFriends">+</button>
+      <p class="friendsName">Humanoid</p>
+      <br/>
+      <button class="inputFriends">+</button>
+      <p class="friendsName">Upset</p>
+    </div>
+  </div>
+  <div class="content" id="friends">
+    <h2>Amis</h2>
+    <input
+      type="search"
+      id="search"
+      class="content search"
+      placeholder="Recherche..."
+      #name
+      (input)="changeName(name.value)"
+    />
+    <div id="friendsWrapper">
+      <div *ngFor="let friend of filteredAllFriends">
+        <button type="button" (click)="removeFriend(friend)" >❌</button>{{ friend.name }}
+      </div>
+    </div>
+  </div>
+</div>

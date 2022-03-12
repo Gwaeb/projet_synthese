@@ -1,0 +1,9 @@
+<div id="plannings_list">
+  <div *ngIf="plannings == null || plannings.length == 0">
+    <h4><u>Aucune planification dans la liste!</u></h4>
+  </div>
+  <div *ngFor="let planning of filteredPlannings">
+    <app-plannings-list-item [planning]="planning" (planningDelete)="deletePlanning($event)"></app-plannings-list-item>
+  </div>
+  <app-delete *ngIf="planning" [show]="show" [name]="planning.title" [button]="planning.creator.id != current_user?.id? 'Refuser' : null" [message]="planning.creator.id != current_user?.id? 'Êtes-vous certain de vouloir refuser l\'invitation \''+ planning.title +'\'?': null" (deleteEvent)="deleteResult($event)" (closeEvent)="closeEvent()"></app-delete>
+</div>

@@ -1,0 +1,76 @@
+@import "../../../../mixins.scss";
+@import "../../../../variables.scss";
+
+h1,
+h3 {
+  text-align: center;
+  color: $gold;
+}
+
+#bodyWrapper {
+  @include flex(row wrap, center);
+  #container {
+    @include flex(row wrap, center);
+    align-items: unset;
+    width: 90%;
+    padding: 20px;
+    #planning {
+      flex: 1;
+      margin: 10px;
+      max-width: 550px;
+      #plannings {
+        @include flex(row wrap, center);
+      }
+    }
+
+    #friends {
+      flex: 1;
+      margin: 10px;
+      max-width: 550px;
+    }
+  }
+}
+
+.sideToSideContent {
+  display: inline-block;
+}
+
+.specificPlanning {
+  background-color: $gold;
+  color: $dark-red;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 15px;
+}
+
+.specificPlanningText {
+  display: inline-block;
+  width: 70%;
+}
+
+.specificPlanningText p {
+  color: $dark-red;
+}
+
+.specificPlanningButton {
+  display: inline-block;
+  width: 30%;
+  height: 100%;
+  transform: translate(0, -150%);
+}
+
+.specificPlanningButton button {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+
+.specificPlanningButton p {
+  color: $dark-red;
+}
+
+.alignText {
+  display: inline-block;
+}

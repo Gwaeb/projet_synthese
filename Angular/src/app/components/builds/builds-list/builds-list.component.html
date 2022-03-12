@@ -1,0 +1,9 @@
+<div id="builds_list">
+  <div *ngIf="filteredBuilds == null || filteredBuilds.length == 0">
+    <h4><u>Aucun équipement dans la liste!</u></h4>
+  </div>
+  <div *ngFor="let build of filteredBuilds">
+    <app-builds-list-item [build]="build"  (buildDelete)="deleteBuild($event)"></app-builds-list-item>
+  </div>
+  <app-delete *ngIf="build" [show]="show" [name]="build.name" [message]="build.used? 'L\'équipement   \''+ build.name+'\'  est utilisé dans ' + build.used + ' partie' + (build.used > 1? 's': '')+', êtes-vous certain de vouloir le supprimer?' : null" (deleteEvent)="deleteResult($event)" (closeEvent)="closeEvent()"></app-delete>
+</div>

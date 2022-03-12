@@ -1,0 +1,41 @@
+@import "./../../../variables.scss";
+@import "./../../../mixins.scss";
+
+#body {
+  @include BGImage("../../../assets/pictures/BGHome.jpg");
+  margin: 0;
+  padding: 0;
+
+  #overlay {
+    #content {
+      @include flex(column wrap, center);
+      img {
+        margin: 50px 0 15px;
+      }
+      #router {
+        @include flex(column wrap, center);
+        padding: 30px 0;
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  #overlay {
+    @include overlay(100%, 100vh, 0.8);
+    img {
+      max-width: 350px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  #overlay {
+    @include overlay(100%, 100vh, 0.6);
+    img {
+      max-width: 500px;
+    }
+    #router {
+      @include overlay(650px, 100%, 0.6);
+    }
+  }
+}

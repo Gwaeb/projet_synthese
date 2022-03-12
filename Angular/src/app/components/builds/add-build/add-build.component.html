@@ -1,0 +1,43 @@
+<div class="pageTitle">
+  <h1>Ajouter un équipement</h1>
+</div>
+<div id="body" class="content">
+  <form [formGroup]="addBuildForm" (ngSubmit)="addBuild()">
+    <div id="items">
+      <app-add-build-item
+        [items]="items"
+        [form]="addBuildForm"
+        *ngFor="let item of itemsF.controls; index as itemNumber"
+        [itemNumber]="itemNumber"
+      ></app-add-build-item>
+    </div>
+    <div id="others">
+      <select formControlName="category" [(ngModel)]="selectValue">
+        <option disabled selected value="">Type de champion</option>
+        <option value="0">Polyvalent</option>
+        <option value="1">Combattant</option>
+        <option value="2">Mage</option>
+        <option value="3">Distance</option>
+        <option value="4">Résistant</option>
+        <option value="5">Assassin</option>
+      </select>
+      <input
+        class="content"
+        type="text"
+        placeholder="Name"
+        formControlName="name"
+      />
+      <button
+        id="add"
+        [disabled]="addBuildForm.invalid"
+        class="pointer"
+        type="submit"
+      >
+        Ajouter
+      </button>
+      <button id="cancel" class="pointer" (click)="cancel()" type="button">
+        Annuler
+      </button>
+    </div>
+  </form>
+</div>

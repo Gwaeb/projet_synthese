@@ -1,0 +1,117 @@
+<div id="body">
+  <nav>
+    <div id="nav-container">
+      <div id="hamburger">
+        <i
+          *ngIf="!menuHamburger"
+          class="fas fa-bars pointer"
+          (click)="clicMenuHamburger()"
+        ></i>
+        <i
+          *ngIf="menuHamburger"
+          class="fas fa-times pointer"
+          (click)="clicMenuHamburger()"
+        ></i>
+        <div id="desktop">
+          <ul *ngIf="menuHamburger">
+            <li (click)="closeMenus()" routerLink="/runes" class="pointer">
+              Runes
+            </li>
+            <li (click)="closeMenus()" routerLink="/builds" class="pointer">
+              Équipements
+            </li>
+            <li (click)="closeMenus()" routerLink="/champions" class="pointer">
+              Champions
+            </li>
+            <li (click)="closeMenus()" routerLink="/skins" class="pointer">
+              Apparences
+            </li>
+          </ul>
+        </div>
+        <div id="mobile">
+          <ul *ngIf="menuHamburger">
+            <li (click)="closeMenus()" routerLink="/runes" class="pointer">
+              Runes
+            </li>
+            <li (click)="closeMenus()" routerLink="/builds" class="pointer">
+              Équipements
+            </li>
+            <li (click)="closeMenus()" routerLink="/champions" class="pointer">
+              Champions
+            </li>
+            <li (click)="closeMenus()" routerLink="/skins" class="pointer">
+              Apparences
+            </li>
+            <li
+              (click)="closeMenus()"
+              routerLink="/profile/{{current_user?.id}}"
+              class="pointer"
+            >
+              Profile
+            </li>
+            <li (click)="closeMenus()" routerLink="/plannings" class="pointer">
+              Planification
+            </li>
+            <li (click)="closeMenus()" routerLink="/matches" class="pointer">
+              Historique des parties
+            </li>
+            <li (click)="logOut()" class="pointer">Déconnexion</li>
+          </ul>
+        </div>
+      </div>
+      <div id="logo-nav">
+        <img class="pointer" src="assets/pictures/logoBG.png" routerLink="/" />
+      </div>
+      <div id="profile">
+        <i
+          (click)="closeMenus()"
+          class="fas fa-bell pointer"
+          routerLink="/notifications"
+        ></i>
+        <h1 id="summonerName" class="pointer" (click)="clicMenuUser()">
+          {{ current_user?.name || "Profile" }}
+        </h1>
+        <ul *ngIf="menuUser" id="menuUser">
+          <li
+            (click)="closeMenus()"
+            routerLink="/profile/{{current_user?.id}}"
+            class="pointer"
+          >
+            Profile
+          </li>
+          <li (click)="closeMenus()" routerLink="/plannings" class="pointer">
+            Planification
+          </li>
+          <li (click)="closeMenus()" routerLink="/matches" class="pointer">
+            Historique des parties
+          </li>
+          <li (click)="logOut()" class="pointer">Déconnexion</li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="content">
+    <div id="main">
+      <router-outlet> </router-outlet>
+    </div>
+  </div>
+
+  <footer>
+    <div id="footer-container">
+      <div id="email">
+        <a href="mailto:info@melius.gg"><h1>info@melius.gg</h1></a>
+      </div>
+      <div id="logo-footer">
+        <img
+          class="pointer"
+          src="assets/pictures/logoNoBG.png"
+          routerLink="/"
+        />
+      </div>
+      <div id="copyright">
+        <h1>&#169; Copyright 2022 Melius.gg</h1>
+      </div>
+    </div>
+  </footer>
+</div>

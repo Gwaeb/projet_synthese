@@ -1,0 +1,60 @@
+@import "../../../../mixins.scss";
+@import "../../../../variables.scss";
+@import "../../../../styles.scss";
+
+h1,
+h3 {
+  text-align: center;
+  color: $gold;
+}
+
+#planning {
+  background-color: $gray;
+  color: $dark-red;
+  width: 200px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.specificPlanningText {
+  display: inline-block;
+  width: 100%;
+}
+
+.specificPlanningText h3 {
+  color: $gold;
+  text-align: center;
+}
+.specificPlanningText h4 {
+  color: $gold;
+  text-align: left;
+}
+
+.specificPlanningText p {
+  color: $gold;
+  text-align: left;
+}
+
+.specificPlanningButton p {
+  color: $gold;
+}
+
+.alignText {
+  display: inline-block;
+  margin: 10px 0;
+}
+
+#buttons {
+  @include flex(column row, center);
+
+  #accept {
+    @include button($dark-red);
+    border-radius: 2px 0px 0px 2px;
+  }
+  #deny {
+    @include button($dark-red);
+    border-radius: 0px 2px 2px 0px;
+
+  }
+}

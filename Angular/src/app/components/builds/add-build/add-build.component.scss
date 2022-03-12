@@ -1,0 +1,56 @@
+@import "../../../../mixins.scss";
+@import "../../../../variables.scss";
+
+#body {
+  width: 90%;
+  margin: 0 auto;
+  padding: 50px 15px;
+  form {
+    @include flex(row wrap, center);
+    align-items: stretch;
+    #items {
+      @include flex(row wrap, space-around);
+      width: 100%;
+    }
+    #others {
+      @include flex(column wrap, space-around);
+      min-height: 400px;
+      select {
+        background-color: $gray;
+        font-size: 16px;
+        margin: 10px;
+      }
+      input {
+        font-size: 18px;
+        margin: 5px 0;
+        @media (min-width: 1100px) and (max-width: 1100px) {
+          font-size: 17px;
+        }
+      }
+      #add {
+        @include button($dark-red);
+        margin: 5px;
+      }
+      #cancel {
+        @include button($gray);
+        margin: 5px;
+      }
+    }
+  }
+
+  @media (min-width: 1000px) {
+    width: 95%;
+    form {
+      @include flex(row wrap, center);
+      align-items: stretch;
+      #items {
+        flex: 3;
+        @include flex(row wrap, space-around);
+      }
+      #others {
+        flex: 1;
+        @include flex(column wrap, space-around);
+      }
+    }
+  }
+}

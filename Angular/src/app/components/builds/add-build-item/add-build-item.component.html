@@ -1,0 +1,23 @@
+<div id="item" [formGroup]="form">
+  <div id="selectWrapper">
+    <div formArrayName="items">
+      <select [(ngModel)]="selectItem" [formControlName]="itemNumber">
+        <option [selected]="true" value="null">Choisir un item</option>
+        <option [ngValue]="item" *ngFor="let item of items">
+          {{ item.name }}
+        </option>
+      </select>
+    </div>
+    <img
+      *ngIf="selectItem"
+      src="{{ selectItem.picture_path }}"
+      alt="{{ selectItem.name }}"
+      title="{{ selectItem.name }} - {{ selectItem.description }}"
+    />
+    <img
+      *ngIf="!selectItem"
+      src="../../../../assets/pictures/no_item.png"
+      alt="No item selected"
+    />
+  </div>
+</div>

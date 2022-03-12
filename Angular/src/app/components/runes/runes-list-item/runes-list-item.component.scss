@@ -1,0 +1,65 @@
+@import "../../../../variables.scss";
+@import "../../../../mixins.scss";
+
+.content {
+  margin: 10px;
+  padding: 10px;
+  width: 242px;
+  #forButtonsRelative {
+    #picture {
+      @include flex(row wrap, space around);
+      img {
+        padding: 10px;
+        height: 100px;
+      }
+      #spliter {
+        width: 0px;
+        border: 1px solid $gold;
+        height: 85px;
+      }
+    }
+    #buttons {
+      display: none;
+    }
+  }
+  h3 {
+    margin: 10px;
+    max-width: 220px;
+  }
+
+  &:hover {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.6);
+    #forButtonsRelative {
+      position: relative;
+      #picture {
+        img {
+          filter: brightness(30%);
+        }
+        #spliter {
+          border: 1px solid $dark-gold;
+        }
+      }
+      #buttons {
+        position: absolute;
+        display: block;
+        top: 15px;
+        margin: 0 auto;
+        width: 240px;
+        #wrapButtons {
+          @include flex(column wrap, center);
+          #edit {
+            @include button($gray);
+            margin-bottom: 30px;
+          }
+          #delete {
+            @include button($dark-red);
+          }
+        }
+      }
+    }
+    h3 {
+      color: $dark-gold;
+    }
+  }
+}

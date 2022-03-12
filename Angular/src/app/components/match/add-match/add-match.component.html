@@ -1,0 +1,173 @@
+<div class="pageTitle">
+  <h1>Ajout d'une partie</h1>
+</div>
+<div class="content" id="bodyWrapper">
+  <form [formGroup]="addMatchForm" (ngSubmit)="addMatch()">
+    <div id="champWrapper">
+      <select
+        name="champion"
+        id="championSelect"
+        [(ngModel)]="selectedChampion"
+        formControlName="champion"
+      >
+        <option value="undefined" [selected]="true" disabled>
+          Choisir un champion
+        </option>
+        <option *ngFor="let champ of allChamps" [ngValue]="champ">
+          {{ champ.name }}
+        </option>
+      </select>
+      <div *ngIf="selectedChampion" id="champCard" class="content">
+        <img
+          src="{{ selectedChampion.picture_path }}"
+          alt="{{ selectedChampion.name }}"
+          width="200px"
+        />
+        <div id="text">
+          <h4 class="textOverflow">
+            {{ selectedChampion.name }}
+          </h4>
+        </div>
+      </div>
+      <div *ngIf="!selectedChampion" id="champCard" class="content">
+        <img
+          src="../../../../assets/pictures/no_item.png"
+          alt="No champion selected"
+        />
+        <div id="text">
+          <h4 class="textOverflow">Choisir un champion</h4>
+        </div>
+      </div>
+    </div>
+    <div id="buildRunes">
+      <div id="buildWrapper">
+        <select
+          name="build"
+          id="buildSelect"
+          [(ngModel)]="selectedBuild"
+          (change)="updateEmpty()"
+          formControlName="build"
+        >
+          <option value="undefined" [selected]="true" disabled>
+            Choisir un équipement
+          </option>
+          <option *ngFor="let build of allBuilds" [ngValue]="build">
+            {{ build.name }}
+          </option>
+        </select>
+        <div *ngIf="selectedBuild" class="content" id="cardBuild">
+          <div id="forButtonsRelative">
+            <div id="titleContainer">
+              <h4 class="textOverflow">
+                {{ selectedBuild.name }}
+              </h4>
+              <p>(Sélectionnez l'item auquel vous vous êtes rendu)</p>
+            </div>
+            <div id="itemsList">
+              <div *ngFor="let item of selectedBuild.items; let i = index">
+                <input
+                  type="radio"
+                  id="{{ item.id }}"
+                  [value]="i + 1"
+                  formControlName="last_item"
+                />
+                <label for="{{ item.id }}"
+                  ><img
+                    src="{{ item.picture_path }}"
+                    alt="{{ item.name }}"
+                    title="{{ item.name }} - {{ item.description }}"
+                  />
+                </label>
+              </div>
+              <div *ngFor="let ei of emptyItems">
+                <img
+                  src="../../../../assets/pictures/no_item.png"
+                  alt="No item"
+                  title="No item"
+                />
+              </div>
+              <button type="button" id="noitem" (click)="resetItem()">
+                Pas d'item
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="!selectedBuild" class="content" id="cardBuild">
+          <div id="forButtonsRelative">
+            <div id="titleContainer">
+              <h4 class="textOverflow">Choisir un équipement</h4>
+            </div>
+            <div id="itemsList">
+              <img
+                id="noBuild"
+                src="../../../../assets/pictures/no_item.png"
+                alt="No build selected"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="runesWrapper">
+        <select
+          name="runes"
+          id="runesSelect"
+          [(ngModel)]="selectedRunesPage"
+          formControlName="rune_page"
+        >
+          <option value="undefined" [selected]="true" disabled>
+            Choisir une page de runes
+          </option>
+          <option *ngFor="let rune of allRunes" [ngValue]="rune">
+            {{ rune.name }}
+          </option>
+        </select>
+        <div id="runesCard" class="content" *ngIf="selectedRunesPage">
+          <div id="picture">
+            <img
+              src="{{ selectedRunesPage.categories[0].picture_path }}"
+              alt="{{ selectedRunesPage.categories[0].name }}"
+              title="{{ selectedRunesPage.categories[0].name }}"
+            /><br />
+            <div id="spliter"></div>
+            <img
+              src="{{ selectedRunesPage.categories[1].picture_path }}"
+              alt="{{ selectedRunesPage.categories[1].name }}"
+              title="{{ selectedRunesPage.categories[1].name }}"
+            /><br />
+          </div>
+          <h4 class="textOverflow">{{ selectedRunesPage.name }}</h4>
+        </div>
+        <div id="runesCard" class="content" *ngIf="!selectedRunesPage">
+          <div id="picture">
+            <img
+              id="noRunesPage"
+              src="../../../../assets/pictures/no_item.png"
+              alt="No runes page selected"
+            />
+          </div>
+          <h4 class="textOverflow">Choisir une page de rune</h4>
+        </div>
+      </div>
+    </div>
+
+    <div id="othersWrapper">
+      <select name="position" id="position" formControlName="position">
+        <option [ngValue]="null" disabled>Choisir une position</option>
+        <option [ngValue]="0">Haut</option>
+        <option [ngValue]="1">Jungle</option>
+        <option [ngValue]="2">Milieu</option>
+        <option [ngValue]="3">Bas</option>
+        <option [ngValue]="4">Support</option>
+      </select>
+      <button id="victory" (click)="result()" *ngIf="victory">Victoire</button>
+      <button id="defeat" (click)="result()" *ngIf="!victory">Défaite</button>
+
+      <button id="save" [disabled]="addMatchForm.invalid" type="submit">
+        Ajouter
+      </button>
+      <button id="cancel" (click)="cancel()" type="button">Annuler</button>
+    </div>
+  </form>
+</div>

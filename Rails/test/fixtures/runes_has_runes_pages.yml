@@ -1,0 +1,143 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the "{}" from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+one: 
+  id: 1
+  rune_id: 1
+  rune_page_id: 1
+# column: value
+#
+two:
+  id: 2
+  rune_id: 2
+  rune_page_id: 1
+# column: value
+three:
+  id: 3
+  rune_id: 3
+  rune_page_id: 1
+
+four:
+  id: 4
+  rune_id: 4
+  rune_page_id: 1
+
+five:
+  id: 5
+  rune_id: 5
+  rune_page_id: 1
+
+six:
+  id: 6
+  rune_id: 6
+  rune_page_id: 1
+
+seven:
+  id: 7
+  rune_id: 7
+  rune_page_id: 1
+
+eight:
+  id: 8
+  rune_id: 8
+  rune_page_id: 1
+
+nine:
+  id: 9
+  rune_id: 9
+  rune_page_id: 1
+
+ten: 
+  id: 10
+  rune_id: 1
+  rune_page_id: 2
+# column: value
+#
+eleven:
+  id: 11
+  rune_id: 2
+  rune_page_id: 2
+# column: value
+twelve:
+  id: 12
+  rune_id: 3
+  rune_page_id: 2
+
+thirteen:
+  id: 13
+  rune_id: 4
+  rune_page_id: 2
+
+fourteen:
+  id: 14
+  rune_id: 5
+  rune_page_id: 2
+
+fifteen:
+  id: 15
+  rune_id: 6
+  rune_page_id: 2
+
+sixteen:
+  id: 16
+  rune_id: 7
+  rune_page_id: 2
+
+seventeen:
+  id: 17
+  rune_id: 8
+  rune_page_id: 2
+
+eighteen:
+  id: 18
+  rune_id: 9
+  rune_page_id: 2
+
+nineteen: 
+  id: 19
+  rune_id: 1
+  rune_page_id: 3
+# column: value
+#
+twenty:
+  id: 20
+  rune_id: 2
+  rune_page_id: 3
+# column: value
+twenty_one:
+  id: 21
+  rune_id: 3
+  rune_page_id: 3
+
+twenty_two:
+  id: 22
+  rune_id: 4
+  rune_page_id: 3
+
+twenty_three:
+  id: 23
+  rune_id: 5
+  rune_page_id: 3
+
+twenty_four:
+  id: 24
+  rune_id: 6
+  rune_page_id: 3
+
+twenty_five:
+  id: 25
+  rune_id: 7
+  rune_page_id: 3
+
+twenty_six:
+  id: 26
+  rune_id: 8
+  rune_page_id: 3
+
+twenty_seven:
+  id: 27
+  rune_id: 9
+  rune_page_id: 3

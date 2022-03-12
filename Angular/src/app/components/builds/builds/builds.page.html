@@ -1,0 +1,109 @@
+<div class="pageTitle">
+  <h1>Équipements <i class="fas fa-plus" (click)="add()"></i></h1>
+</div>
+<div class="contentBody">
+  <div class="menuContent content">
+    <div id="searchWrapper">
+      <input
+        class="search"
+        type="search"
+        placeholder="Recherche..."
+        #name
+        (input)="nameChange(name.value)"
+      />
+    </div>
+    <div id="sortWrapper">
+      <h3>Trier (ascendant):</h3>
+      <label >
+        <input
+        type="radio"
+        id="noSortSelected"
+        name="sort"
+        value="noSortSelected"
+        checked="checked"
+        #sort0
+        (input)="sortChange(sort0.value)"
+      />Date de création
+      </label>
+
+      <label><input
+        type="radio"
+        id="name"
+        name="sort"
+        value="0"
+        #sort1
+        (input)="sortChange(sort1.value)"
+      />Nom</label>
+    </div>
+    <div id="filterWrapper">
+      <h3>Filtrer:</h3>
+
+      <label><input
+        type="radio"
+        id="noFilterSelected"
+        name="filter"
+        value="noFilterSelected"
+        checked="checked"
+        #filter
+        (input)="filterChange(filter.value)"
+      />Aucun</label>
+
+      <label><input
+        type="radio"
+        id="polyvalent"
+        name="filter"
+        value="0"
+        #filter0
+        (input)="filterChange(filter0.value)"
+      />Polyvalent</label>
+
+      <label><input
+        type="radio"
+        id="fighter"
+        name="filter"
+        value="1"
+        #filter1
+        (input)="filterChange(filter1.value)"
+      />Combattant</label>
+
+      <label><input
+        type="radio"
+        id="mage"
+        name="filter"
+        value="2"
+        #filter2
+        (input)="filterChange(filter2.value)"
+      />Mage</label>
+
+      <label><input
+        type="radio"
+        id="range"
+        name="filter"
+        value="3"
+        #filter3
+        (input)="filterChange(filter3.value)"
+      />Distance</label>
+
+      <label><input
+        type="radio"
+        id="tank"
+        name="filter"
+        value="4"
+        #filter4
+        (input)="filterChange(filter4.value)"
+      />Résistant</label>
+
+      <label> <input
+        type="radio"
+        id="assassin"
+        name="filter"
+        value="5"
+        #filter5
+        (input)="filterChange(filter5.value)"
+      />Assassin</label>
+    </div>
+  </div>
+  <div id="route">
+    <app-builds-list></app-builds-list>
+  </div>
+</div>

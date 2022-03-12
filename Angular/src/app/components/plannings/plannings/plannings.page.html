@@ -1,0 +1,83 @@
+<div class="pageTitle">
+  <h1>Planifications <i class="fas fa-plus" (click)="add()"></i></h1>
+</div>
+<div class="contentBody">
+  <div class="menuContent content">
+    <form>
+      <div id="searchWrapper">
+        <input
+          class="search"
+          type="search"
+          placeholder="Recherche..."
+          #name
+          (input)="nameChange(name.value)"
+        />
+      </div>
+      <div id="sortWrapper">
+        <h3>Trier (ascendant):</h3>
+
+        <label for="noSortSelected"><input
+          type="radio"
+          id="noSortSelected"
+          name="sort"
+          value="noSortSelected"
+          checked="checked"
+          #sort0
+          (input)="sortChange(sort0.value)"
+        />Date de création</label>
+
+        <label for="coming"><input
+          type="radio"
+          id="coming"
+          name="sort"
+          value="0"
+          #sort1
+          (input)="sortChange(sort1.value)"
+        />Titre</label>
+      </div>
+      <div id="filterWrapper">
+        <h3>Filtrer:</h3>
+
+        <label for="noFilterSelected"><input
+          type="radio"
+          id="noFilterSelected"
+          name="filter"
+          value="null"
+          checked="checked"
+          #filter1
+          (input)="filterChange(filter1.value)"
+        />Aucun</label>
+
+        <label for="mine"><input
+          type="radio"
+          id="mine"
+          name="filter"
+          value=0
+          #filter2
+          (input)="filterChange(filter2.value)"
+        />Mes planifications</label>
+
+        <label for="freePlace"><input
+          type="radio"
+          id="freePlace"
+          name="filter"
+          value=1
+          #filter3
+          (input)="filterChange(filter3.value)"
+        />Place disponible</label>
+
+        <label for="venir"><input
+          type="radio"
+          id="venir"
+          name="filter"
+          value=2
+          #filter4
+          (input)="filterChange(filter4.value)"
+        />À venir</label>
+      </div>
+    </form>
+  </div>
+  <div id="route">
+    <app-plannings-list></app-plannings-list>
+  </div>
+</div>

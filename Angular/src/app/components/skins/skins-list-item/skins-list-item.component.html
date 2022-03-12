@@ -1,0 +1,29 @@
+<!--
+<div class="card">
+  <img src="{{ skin.picture_path }}" alt="Avatar" width="200px">
+  <div class="container">
+    <h4><b>{{ skin.name }}</b></h4>
+    <p>{{skin.price}} BE</p>
+  </div>
+</div> -->
+<div class="content">
+  <div id="pictureContent">
+    <img src="{{ skin.picture_path }}" alt="Avatar" width="200px" height="391.625px" />
+    <div id="buttons">
+      <button *ngIf="!isAdd && !isEdit" id="replace" (click)="editSkin()">
+        Remplacer
+      </button>
+      <button *ngIf="!isAdd && !isEdit" id="delete" (click)="deleteSkin()">
+        Supprimer
+      </button>
+      <button *ngIf="isAdd" id="add" (click)="addSkin()">Ajouter</button>
+      <button *ngIf="isEdit" id="add" (click)="updateSkin()">Choisir</button>
+    </div>
+  </div>
+  <div id="texts">
+    <h4 class="textOverflow">
+      {{ skin.name }}
+    </h4>
+    <p>{{ skin.price }} RP</p>
+  </div>
+</div>

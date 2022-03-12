@@ -1,0 +1,37 @@
+<div class="pageTitle">
+  <h1>Historique des parties <i class="fas fa-plus" (click)="add()"></i></h1>
+</div>
+<div class="contentBody">
+  <div class="menuContent content">
+    <form>
+      <div id="searchWrapper">
+        <input class="search" type="search" placeholder="Recherche..." #name (input)="nameChange(name.value)"/>
+      </div>
+      <div id="sortWrapper">
+        <h3>Trier (ascendant):</h3>
+
+        <label for="noSortSelected"><input type="radio" id="noSortSelected" name="sort" value="noSortSelected" checked="checked" #sort0 (input)="sortChange(sort0.value)"/>Date de création</label>
+        <label for="champion"><input type="radio" id="champion" name="sort" value=0 #sort1 (input)="sortChange(sort1.value)"/>Champion</label>
+        <label for="result"><input type="radio" id="result" name="sort" value=1 #sort2 (input)="sortChange(sort2.value)"/>Résultat</label>
+      </div>
+      <div id="filterWrapper">
+        <h3>Filtrer:</h3>
+
+        <label for="noFilterSelected"><input type="radio" id="noFilterSelected" name="filter" value="null" checked="checked" #filter1 (input)="filterChange(filter1.value)"/>Aucun</label>
+
+        <label for="top"><input type="radio" id="top" name="filter" value=0 #filter2 (input)="filterChange(filter2.value)"/>Haut</label>
+
+        <label for="jungle"><input type="radio" id="jungle" name="filter" value=1 #filter3 (input)="filterChange(filter3.value)"/>Jungle</label>
+
+        <label for="mid"><input type="radio" id="mid" name="filter" value=2 #filter4 (input)="filterChange(filter4.value)"/>Milieu</label>
+
+        <label for="bot"><input type="radio" id="bot" name="filter" value=3 #filter5 (input)="filterChange(filter5.value)"/>Bas</label>
+
+        <label for="support"><input type="radio" id="support" name="filter" value=4 #filter6 (input)="filterChange(filter6.value)"/>Support</label>
+      </div>
+    </form>
+  </div>
+  <div id="route">
+    <app-match-list></app-match-list>
+  </div>
+</div>

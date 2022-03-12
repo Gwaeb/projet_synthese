@@ -1,0 +1,26 @@
+<div class="content">
+  <div id="pictureContent">
+    <img
+      src="{{ matchHistory.champion.picture_path }}"
+      alt="{{ matchHistory.champion.name }}"
+      width="200px"
+      height="413.625px"
+    />
+    <div id="buttons">
+      <button id="replace" (click)="editMatch()">Modifier</button>
+      <button id="delete" (click)="deleteMatch()">Supprimer</button>
+    </div>
+  </div>
+  <div id="texts">
+    <h4 class="textOverflow">
+      {{ matchHistory.champion.name }}
+    </h4>
+    <div>
+      <p *ngIf="victory"><i class="fas fa-crown"></i></p>
+      <p *ngIf="!victory"><i class="fas fa-skull"></i></p>
+    </div>
+  </div>
+  <div>
+    <p id="niketesmorts">{{matchHistory.time_ago}}</p>
+  </div>
+</div>

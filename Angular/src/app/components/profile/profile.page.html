@@ -1,0 +1,145 @@
+<div class="pageTitle">
+  <h1>Profile</h1>
+</div>
+
+  <div id="contentWrapper">
+    <div id="nameEmail">
+      <h2><u>Nom d'invocateur:</u> {{ user?.name }}</h2>
+      <h2><u>Courriel:</u> {{ user?.email }}</h2>
+    </div>
+    <div id="image">
+      <img src="{{ user?.picture_path}}" alt="" />
+    </div>
+  </div>
+  <div id="rapports">
+    <div class="rapport">
+      <table class="content">
+        <thead>
+          <tr>
+            <th colspan="5" class="titleTable">Rapport des pages de runes</th>
+          </tr>
+          <tr>
+            <th>Nom de la page de runes</th>
+            <th>Nombre de fois utilisées</th>
+            <th>Nombre de victoire</th>
+            <th>Nombre de défaites</th>
+            <th>Pourcentage de victoire</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let rp of rapportGabriel">
+            <td>{{rp.runes_page_name}}</td>
+            <td>{{rp.nb_time_used}}</td>
+            <td>{{rp.victories}}</td>
+            <td>{{rp.defeats}}</td>
+            <td class="right">{{rp.pourcentage_victories}}%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="rapport">
+      <table class="content">
+        <thead>
+          <tr>
+            <th colspan="6" class="titleTable">Rapport des champions</th>
+          </tr>
+          <tr>
+            <th>Champions</th>
+            <th>Nombre de parties jouées</th>
+            <th>Nombre de victoire</th>
+            <th>Nombre de défaites</th>
+            <th>Pourcentage de victoire</th>
+            <th>Pourcentage de défaites</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let champ of rapportMaxime?.champions">
+            <td>{{champ.name}}</td>
+            <td>{{champ.nombre_parties}}</td>
+            <td>{{champ.victoire}}</td>
+            <td>{{champ.defaite}}</td>
+            <td class="right">{{champ.pourcentage_victoire}}%</td>
+            <td class="right">{{champ.pourcentage_defaite}}%</td>
+          </tr>
+          <tr>
+            <th>Total</th>
+            <th>{{nbMatchTotal}}</th>
+            <th>{{rapportMaxime?.victoire_total}}</th>
+            <th>{{rapportMaxime?.defaite_total}}</th>
+            <th class="right">
+              {{rapportMaxime?.pourcentage_total_victoire}}%
+            </th>
+            <th class="right">{{rapportMaxime?.pourcentage_total_defaite}}%</th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="rapport">
+      <table class="content">
+        <thead>
+          <tr>
+            <th colspan="6" class="titleTable">Rapport des positions</th>
+          </tr>
+          <tr>
+            <th>Positions</th>
+            <th>Nombre de parties jouées</th>
+            <th>Nombre de victoire</th>
+            <th>Nombre de défaites</th>
+            <th>Pourcentage de victoire</th>
+            <th>Pourcentage de défaites</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let position of rapportMaxime?.positions">
+            <td>{{positions[position.position]}}</td>
+            <td>{{position.nombre_parties}}</td>
+            <td>{{position.victoire}}</td>
+            <td>{{position.defaite}}</td>
+            <td class="right">{{position.pourcentage_victoire}}%</td>
+            <td class="right">{{position.pourcentage_defaite}}%</td>
+          </tr>
+          <tr>
+            <th>Total</th>
+            <th>{{nbMatchTotal}}</th>
+            <th>{{rapportMaxime?.victoire_total}}</th>
+            <th>{{rapportMaxime?.defaite_total}}</th>
+            <th class="right">
+              {{rapportMaxime?.pourcentage_total_victoire}}%
+            </th>
+            <th class="right">{{rapportMaxime?.pourcentage_total_defaite}}%</th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="rapport">
+      <table class="content">
+        <thead>
+          <tr>
+            <th colspan="7" class="titleTable">
+              Rapport des planifications de mes amis
+            </th>
+          </tr>
+          <tr>
+            <th>Amis</th>
+            <th>Planif. acceptées</th>
+            <th>Planif. acceptées en commun</th>
+            <th>Planif. en attente</th>
+            <th>Planif. en attente en commun</th>
+            <th>Total des planif.</th>
+            <th>Total des planif. en commun</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let friend of rapportMathieu">
+            <td>{{friend.name}}</td>
+            <td>{{friend.accepted}}</td>
+            <td>{{friend.accepted_commun}}</td>
+            <td>{{friend.pending}}</td>
+            <td>{{friend.pending_commun}}</td>
+            <td>{{friend.total}}</td>
+            <td>{{friend.total_commun}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

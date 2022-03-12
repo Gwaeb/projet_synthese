@@ -1,0 +1,20 @@
+<div class="content">
+  <div id="forButtonsRelative">
+    <div id="picture">
+      <img src="{{ runePage.categories[0].picture_path }}" width="100px" height="100px" alt="" /><br />
+      <div id="spliter"></div>
+      <img src="{{ runePage.categories[1].picture_path }}" width="100px" height="100px" alt="" /><br />
+    </div>
+    <div id="buttons">
+      <div id="wrapButtons">
+        <button id="edit" class="pointer" (click)="editRunePage()">
+          Modifier
+        </button>
+        <button id="delete" class="pointer" (click)="deleteRunePage()">
+          Supprimer
+        </button>
+      </div>
+    </div>
+  </div>
+  <h3 class="textOverflow">{{ runePage.name }}</h3>
+</div>

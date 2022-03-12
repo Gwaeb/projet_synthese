@@ -1,0 +1,269 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px transparent;
+  border-radius: 10px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $gold;
+  border-radius: 10px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $gray;
+}
+
+* {
+  color: $gold;
+  font-family: Cinzel, serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.textOverflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.content {
+  background-color: $dark-red;
+  border: 1px solid $gold;
+}
+
+.pointer {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+/* Formulaire de connexion/inscription */
+
+.form {
+  @extend .content;
+  font-size: 22px;
+  padding: 10px;
+  margin: 10px 0 5px;
+}
+.inputContent {
+  margin-bottom: 15px;
+  @media (max-width: 767px) {
+    width: 335px;
+  }
+}
+/* FIN Formulaire de connexion/inscription */
+
+/* Partie de filtres/sort/content  */
+.pageTitle {
+  @include flex(row wrap, center);
+  text-align: center;
+  padding: 0 10px;
+  margin-top: 10px;
+  i {
+    @extend .pointer;
+  }
+}
+
+.contentBody {
+  @include flex(column wrap, center);
+  align-items: unset;
+  @media (min-width: 1000px) {
+    @include flex(row wrap, center);
+    align-items: unset;
+  }
+}
+
+.menuContent {
+  flex: 2;
+  display: flex;
+  flex-flow: row wrap;
+  height: 100%;
+  padding: 10px;
+  margin: 10px;
+  h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  #sortWrapper,
+  #filterWrapper {
+    label {
+      font-size: 20px;
+    }
+    @media (max-width: 999px) {
+      margin-right: 30px;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    display: flex;
+    flex-flow: column wrap;
+  }
+}
+
+#route {
+  flex: 7;
+}
+
+#searchWrapper {
+  width: 100%;
+  height: 32px;
+}
+.search {
+  width: 98%;
+  font-size: 22px;
+  background-color: $dark-red;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid $gold;
+}
+
+.search::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  height: 1em;
+  width: 1em;
+  border-radius: 50em;
+  background: url(https://pro.fontawesome.com/releases/v5.10.0/svgs/solid/times-circle.svg)
+    no-repeat 50% 50%;
+  background-size: contain;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.search:focus::-webkit-search-cancel-button {
+  opacity: 0.3;
+  pointer-events: all;
+}
+
+#sliderWrapper {
+  width: 100%;
+  .textsPrice {
+    @include flex(row wrap, space-between);
+    width: 100%;
+    span {
+      font-size: 18px;
+    }
+  }
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  background: $gray;
+  outline: none;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: $gold;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: $gold;
+  cursor: pointer;
+}
+
+/* FIN Partie de filtres/sort/content  */
+
+h1 {
+  font-size: 22px;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 24px;
+  }
+  .form {
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 1100px) {
+  h1 {
+    font-size: 26px;
+  }
+
+  .form {
+    font-size: 25px;
+  }
+}
+
+.menuContent {
+  display: grid;
+  place-content: left;
+
+  label {
+    font-size: 2rem;
+    line-height: 1.1;
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: 0.5em;
+  }
+
+  label + label {
+    margin-top: 0.5em;
+  }
+
+  input[type="radio"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid currentColor;
+    border-radius: 50%;
+    transform: translateY(-0.075em);
+
+    display: grid;
+    place-content: center;
+  }
+
+  input[type="radio"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em $dark-red;
+    /* Windows High Contrast Mode */
+    background-color: CanvasText;
+  }
+  input[type="radio"]:checked::before {
+    transform: scale(1);
+  }
+}
+
+input + label {
+  position: relative;
+  z-index: 1;
+}

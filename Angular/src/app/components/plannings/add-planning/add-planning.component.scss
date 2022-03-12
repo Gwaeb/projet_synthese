@@ -1,0 +1,72 @@
+@import "../../../../mixins.scss";
+@import "../../../../variables.scss";
+
+#bodyWrapper {
+  form {
+    @include flex(row wrap, center);
+    align-items: unset;
+    padding: 10px;
+    #friends {
+      flex: 1;
+      padding: 10px;
+      min-width: 300px;
+      margin: 0 20px 20px;
+      h2 {
+        text-align: center;
+        margin: 10px;
+      }
+      #search {
+        margin-bottom: 15px;
+      }
+      #friendsWrapper {
+        min-height: 400px;
+        input,
+        label {
+          font-size: 22px;
+        }
+      }
+    }
+    #inputs {
+      flex: 1;
+      margin: 20px;
+      @include flex(column wrap, flex-start);
+      #nameDate {
+        @include flex(column wrap, center);
+        margin-bottom: 200px;
+        #name {
+          font-size: 22px;
+          padding: 10px;
+          margin-bottom: 20px;
+        }
+        #date {
+          font-size: 22px;
+          padding: 10px;
+        }
+      }
+      #buttons {
+        @include flex(column wrap, center);
+        #save {
+          @include button($gray);
+          margin-bottom: 20px;
+        }
+        #cancel {
+          @include button($dark-red);
+        }
+      }
+      @media (min-width: 760px) {
+        margin: 0 20px 20px;
+      }
+    }
+  }
+}
+:checked + label::before {
+  content: '✅';
+}
+
+label::before {
+  content: '❌';
+}
+
+input[type="checkbox"] {
+  display: none;
+}

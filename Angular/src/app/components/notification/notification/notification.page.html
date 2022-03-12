@@ -1,0 +1,34 @@
+<h1>Notifications</h1>
+<div id="bodyWrapper">
+  <div id="container">
+    <div class="content" id="planning">
+      <h3>Invitation de planning</h3>
+      <div id="plannings">
+        <app-notification-item-planning
+          *ngFor="let planning of plannings"
+          [planning]="planning"
+        ></app-notification-item-planning>
+      </div>
+    </div>
+    <!--
+    <div class="content" id="friends">
+      <h3>Demandes d'ami</h3>
+
+      <div>
+        <button class="sideToSideContent">-</button>
+        <button class="sideToSideContent">+</button>
+        <p class="sideToSideContent">AtomicBloods</p>
+      </div>
+      <div>
+        <button class="sideToSideContent">-</button>
+        <button class="sideToSideContent">+</button>
+        <p class="sideToSideContent">Gwaeb</p>
+      </div>
+      <div>
+        <button class="sideToSideContent">-</button>
+        <button class="sideToSideContent">+</button>
+        <p class="sideToSideContent">Potato</p>
+      </div>
+    </div>-->
+  </div>
+</div>

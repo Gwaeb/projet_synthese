@@ -1,0 +1,14 @@
+<div id="planning" >
+  <div class="specificPlanningText" title="Amis invités:&#10;{{ invitedFriends }}">
+    <h3>{{ formattedDate }}</h3>
+    <h4 class="alignText">Par:</h4>
+    <p class="alignText">{{ planning.creator.name }}</p>
+    <br />
+    <h4 class="alignText">Titre:</h4>
+    <p class="alignText">{{ planning.title }}</p>
+  </div>
+  <div id="buttons" class="specificPlanningButton">
+    <button id="accept" type="button" (click)="accept()" title="Accepter">✅</button>
+    <button id="deny" type="button" (click)="deny()" title="Refuser">❌</button>
+  </div>
+</div>

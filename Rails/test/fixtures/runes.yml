@@ -1,0 +1,69 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the "{}" from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+one: 
+  id: 1
+  name: lethal tempo
+  description: attaque rapide
+  level: 0
+  category_id: 1
+# column: value
+#
+two: 
+  id: 2
+  name: overheal
+  description: soins
+  level: 1
+  category_id: 1
+# column: value
+three:
+  id: 3
+  name: "Legend: Alacrity"
+  description: dommage
+  level: 2
+  category_id: 1
+
+four:
+  id: 4
+  name: "Last Stand"
+  description: soin apres kill
+  level: 3
+  category_id: 1
+
+five:
+  id: 5
+  name: cheap shot
+  description: puissance
+  level: 1
+  category_id: 2
+
+six:
+  id: 6
+  name: ravenous hunter
+  description: soin apres assist
+  level: 3
+  category_id: 2
+
+seven:
+  id: 7
+  name: adaptative
+  description: force
+  level: 3
+  category_id: 3
+
+eight:
+  id: 8
+  name: attack
+  description: speed
+  level: 1
+  category_id: 3
+
+nine:
+  id: 9
+  name: armor
+  description: donne de l'armure
+  level: 5
+  category_id: 3

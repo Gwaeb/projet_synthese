@@ -1,0 +1,19 @@
+<div id="myModal" class="modal" *ngIf="show">
+  <div class="modal-content content">
+    <span class="close" (click)="close()">&times;</span>
+    <p>
+      {{ message || "Etes-vous certain de vouloir supprimer " + (name || 'cet élément') + " ?" }}
+    </p>
+    <div id="buttons">
+      <button
+        type="button"
+        id="delete"
+        (click)="deleteElement()"
+        *ngIf="!disabled"
+      >
+        {{ button || "Supprimer"}}
+      </button>
+      <button type="button" id="close" (click)="close()">Fermer</button>
+    </div>
+  </div>
+</div>

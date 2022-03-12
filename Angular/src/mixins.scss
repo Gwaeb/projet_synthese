@@ -1,0 +1,49 @@
+@import "./variables.scss";
+
+@mixin flex($FF, $JC) {
+  display: flex;
+  flex-flow: $FF;
+  justify-content: $JC;
+  align-items: center;
+}
+
+@mixin BGImage($url) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: $gray;
+}
+
+@mixin overlay($width, $height, $force) {
+  width: $width;
+  min-height: $height;
+  background-color: rgba(0, 0, 0, $force);
+  z-index: 2;
+}
+
+@mixin button($BGColor) {
+  border: 1px solid $gold;
+  background-color: $BGColor;
+  color: $gold;
+  font-family: Cinzel, serif;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 10px 15px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $gold;
+    color: $BGColor;
+  }
+
+  &:disabled {
+    background-color: $gray;
+    color: lightgrey;
+    border: 1px solid;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 25px;
+  }
+}

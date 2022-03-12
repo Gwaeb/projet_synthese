@@ -1,0 +1,9 @@
+<div id="matches_list">
+  <div *ngIf="filteredMatchHistory == null || filteredMatchHistory.length == 0">
+    <h4><u>Aucun match dans la liste!</u></h4>
+  </div>
+  <div *ngFor="let matchHistory of filteredMatchHistory">
+    <app-match-list-item [matchHistory]="matchHistory" (matchDelete)="deleteMatch($event)"></app-match-list-item>
+  </div>
+  <app-delete *ngIf="match" [show]="show" [name]="'la partie jouée avec \'' + match.champion.name + '\' qui a été ' + (match.victory? 'gagnée':'perdue')  + ' ' + match.time_ago" (deleteEvent)="deleteResult($event)" (closeEvent)="closeEvent()"></app-delete>
+</div>

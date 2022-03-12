@@ -1,0 +1,18 @@
+@import "../../../../mixins.scss";
+@import "../../../../variables.scss";
+button {
+  @include button($dark-red);
+  margin-bottom: 15px;
+}
+
+#buttons {
+  margin-top: 25px;
+  @include flex(column wrap, center);
+}
+a {
+  font-weight: bold;
+}
+
+.error {
+  color: red;
+}

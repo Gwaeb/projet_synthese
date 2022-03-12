@@ -1,0 +1,73 @@
+@import "../../../../mixins.scss";
+@import "../../../../variables.scss";
+//@import "../../../../styles.scss";
+
+h1,
+h3 {
+  text-align: center;
+  color: $gold;
+}
+
+::placeholder {
+  color: $gold;
+}
+
+input {
+  text-decoration: underline;
+  color: $gold;
+  text-align: center;
+}
+
+#players {
+  margin-left: 10px;
+  width: 90%;
+  margin-right: 10px;
+  margin-top: 25px;
+}
+
+.container {
+  width: 100%;
+}
+
+.add {
+  width: 50%;
+  height: 100%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.list {
+  width: 39%;
+  height: 100%;
+  margin-left: 110px;
+  display: inline-block;
+}
+
+.inputFriends {
+  display: inline-block;
+}
+
+.friendsName {
+  display: inline-block;
+}
+
+#friends {
+  flex: 1;
+  padding: 10px;
+  min-width: 300px;
+  margin: 0 20px 20px;
+  h2 {
+    text-align: center;
+    margin: 10px;
+  }
+  #search {
+    margin-bottom: 15px;
+  }
+  #friendsWrapper {
+    min-height: 400px;
+    input,
+    label {
+      font-size: 22px;
+    }
+  }
+}

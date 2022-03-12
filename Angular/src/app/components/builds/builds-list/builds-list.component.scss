@@ -1,0 +1,5 @@
+@import "../../../../variables.scss";
+@import "../../../../mixins.scss";
+#builds_list {
+  @include flex(row wrap, center);
+}

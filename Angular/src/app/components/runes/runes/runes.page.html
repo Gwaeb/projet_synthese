@@ -1,0 +1,28 @@
+<div class="pageTitle">
+  <h1>Runes <i class="fas fa-plus" (click)="add()"></i></h1>
+</div>
+<div class="contentBody">
+  <div class="menuContent content">
+    <div id="searchWrapper">
+      <input class="search" type="search" placeholder="Recherche..." #name (input)="nameChange(name.value)" />
+    </div>
+    <div id="sortWrapper">
+      <h3>Trier (ascendant):</h3>
+      <label for="noSortSelected"><input type="radio" id="noSortSelected" name="sort" value="noSortSelected" checked="checked" #sort0 (input)="sortChange(sort0.value)"/>Date de création</label>
+      <label for="category"><input type="radio" id="category" name="sort" value=0 #sort1 (input)="sortChange(sort1.value)" />Catégorie</label>
+      <label for="name"><input type="radio" id="name" name="sort" value=1 #sort2 (input)="sortChange(sort2.value)"/>Nom</label>
+    </div>
+    <div id="filterWrapper">
+      <h3>Filtrer:</h3>
+      <label for="noFilterSelected"><input type="radio" id="noFilterSelected" name="filter" value="noFilterSelected" checked="checked" #filter1 (input)="filterChange(filter1.value)"/>Aucun</label>
+      <label for="precision"><input type="radio" id="precision" name="filter" value=1 #filter2 (input)="filterChange(filter2.value)"/>Précision</label>
+      <label for="domination"><input type="radio" id="domination" name="filter" value=2 #filter3 (input)="filterChange(filter3.value)"/>Domination</label>
+      <label for="sorcery"><input type="radio" id="sorcery" name="filter" value=3 #filter4 (input)="filterChange(filter4.value)"/>Sorcellerie</label>
+      <label for="resolve"><input type="radio" id="resolve" name="filter" value=4 #filter5 (input)="filterChange(filter5.value)"/>Résoudre</label>
+      <label for="inspiration"><input type="radio" id="inspiration" name="filter" value=5 #filter6 (input)="filterChange(filter6.value)"/>Inspiration</label>
+    </div>
+  </div>
+  <div id="route">
+    <app-runes-list></app-runes-list>
+  </div>
+</div>

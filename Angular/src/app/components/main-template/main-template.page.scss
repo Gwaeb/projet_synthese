@@ -1,0 +1,205 @@
+@import "./../../../variables.scss";
+@import "./../../../mixins.scss";
+
+@mixin nav-part {
+  min-width: 40px;
+  @media (min-width: 768px) {
+    min-width: 300px;
+  }
+}
+
+@mixin menu($top) {
+  ul {
+    display: block;
+    position: absolute;
+    padding-left: 0;
+    top: $top;
+    li {
+      min-width: 200px;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      list-style: none;
+      background-color: $gray;
+      border: 1px solid $gold;
+      padding: 24px 40px;
+
+      &:hover {
+        color: $gray;
+        background-color: $gold;
+      }
+    }
+  }
+}
+
+#body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  @include BGImage("../../../assets/pictures/BGHomeBW.png");
+
+  nav {
+    background-color: $dark-red;
+    border-bottom: 1px solid $gold;
+    height: 9vh;
+
+    #nav-container {
+      margin: auto;
+      width: 95%;
+
+      @include flex(row wrap, space-between);
+
+      #hamburger {
+        @include nav-part;
+        position: relative;
+        z-index: 800;
+        @include menu(5.3vh);
+        i {
+          font-size: 45px;
+        }
+        #desktop {
+          display: none;
+        }
+        #mobile {
+          display: block;
+        }
+        @media (max-width: 767px) {
+          margin-left: 15px;
+        }
+      }
+
+      #logo-nav {
+        @include flex(row wrap, center);
+        img {
+          height: 9vh;
+          margin: auto;
+        }
+      }
+
+      #profile {
+
+        z-index: 800;
+
+        @include nav-part;
+        @include menu(4.7vh);
+        #summonerName {
+          display: none;
+          margin: 0;
+        }
+        i {
+          font-size: 30px;
+        }
+        @media (max-width: 767px) {
+          #menuUser {
+            display: none;
+          }
+        }
+      }
+      @media (min-width: 768px) {
+        #hamburger {
+          #desktop {
+            display: block;
+          }
+          #mobile {
+            display: none;
+          }
+        }
+
+        #profile {
+          #summonerName {
+            display: block;
+          }
+          @include flex(row wrap, right);
+          position: relative;
+          i {
+            margin-right: 15px;
+            font-size: 30px;
+          }
+        }
+      }
+    }
+  }
+
+  #content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    #main {
+      width: 100%;
+      height: 82.73vh;
+      @media (min-width: 1100px) {
+        width: 80%;
+      }
+      @media (min-width: 1500px) {
+        width: 70%;
+      }
+      background-color: $light-red;
+      overflow-y: scroll;
+    }
+  }
+
+  @mixin footer-part {
+    @media (min-width: 768px) {
+      width: 250px;
+    }
+    @media (min-width: 1050px) {
+      width: 400px;
+    }
+  }
+
+  footer {
+    background-color: $dark-red;
+    border-top: 1px solid $gold;
+    height: 8vh;
+    @include flex(row wrap, center);
+
+    #footer-container {
+      margin: auto;
+      width: 95%;
+      @include flex(row wrap, space-between);
+
+      #email {
+        @include footer-part;
+      }
+
+      #logo-footer {
+        @include flex(row wrap, center);
+        img {
+          height: 8vh;
+          margin: auto;
+        }
+      }
+
+      #copyright {
+        @include footer-part;
+        @include flex(row wrap, right);
+
+        @media (min-width: 768px) {
+          h1 {
+            text-align: right;
+          }
+        }
+      }
+
+      h1 {
+        margin: 0;
+      }
+
+      @media (max-width: 767px) {
+        h1 {
+          font-size: 18px;
+        }
+        @include flex(column wrap, center);
+        #email,
+        #copyright {
+          padding-left: 10px;
+          padding-right: 10px;
+          text-align: center;
+        }
+        img {
+          display: none;
+        }
+      }
+    }
+  }
+}

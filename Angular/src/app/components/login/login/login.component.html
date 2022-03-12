@@ -1,0 +1,47 @@
+<form #form="ngForm" [formGroup]="loginForm" (ngSubmit)="logIn()">
+  <div class="inputContent">
+    <input
+      class="form"
+      type="email"
+      placeholder="Courriel"
+      formControlName="email"
+      [class.is-invalid]="
+        (loginForm.get('email')?.invalid &&
+          (form.submitted || loginForm.get('email')?.touched))
+      "
+    />
+    <div *ngIf="emailControl.invalid && emailControl.dirty && emailControl.touched">
+      Le courriel doit être valide.
+    </div>
+
+  </div>
+
+  <div class="inputContent">
+    <input
+      class="form"
+      type="password"
+      placeholder="Mot de passe"
+      formControlName="password"
+      [class.is-invalid]="
+        loginForm.get('password')?.invalid &&
+        loginForm.get('password')?.dirty &&
+        loginForm.get('password')?.touched
+      "
+    />
+    <div *ngIf="passwordControl.invalid && passwordControl.dirty && passwordControl.touched">
+      Le mot de passe doit faire au moins 6 caractères
+    </div>
+  </div>
+
+  <div id="buttons">
+    <button [disabled]="loginForm.invalid" class="pointer" type="submit">
+      Connexion
+    </button>
+    <div *ngIf="authError" class="error">
+      {{ authError }}
+    </div>
+
+    <span>Vous n'avez pas de compte?</span>
+    <a routerLink="/account/signup">Créer un compte</a>
+  </div>
+</form>

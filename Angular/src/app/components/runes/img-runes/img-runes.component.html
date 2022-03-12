@@ -1,0 +1,14 @@
+<div [formGroup]="form">
+  <div formArrayName="runes">
+    <input type="radio" id="{{runeNumber}}{{rune.id}}" [value]="rune.id" attr.name="{{runeNumber.toString()}}" [formControlName]="runeNumber.toString()" />
+    <label for="{{runeNumber}}{{rune.id}}"><img
+      class="pointer"
+      src="{{rune.picture_path}}"
+      alt="{{rune.name}}"
+      title="{{rune.name}} - {{rune.description}}"
+      [class.main] = "rune.level == 0 && rune.category_id != 6"
+      [class.rune] = "rune.level != 0 && rune.category_id != 6"
+      [class.shards] = "rune.category_id == 6"
+    /></label>
+  </div>
+</div>

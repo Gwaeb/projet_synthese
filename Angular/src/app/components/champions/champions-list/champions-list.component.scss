@@ -1,0 +1,6 @@
+@import "../../../../variables.scss";
+@import "../../../../mixins.scss";
+
+#champion_list {
+  @include flex(row wrap, center);
+}

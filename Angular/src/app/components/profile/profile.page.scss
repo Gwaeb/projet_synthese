@@ -1,0 +1,60 @@
+@import "../../../variables.scss";
+@import "../../../mixins.scss";
+
+  #contentWrapper {
+    @include flex(row wrap, center);
+    align-items: unset;
+    padding: 20px;
+    #nameEmail {
+      flex: 1;
+      min-width: 300px;
+    }
+    #image {
+      flex: 1;
+      min-width: 100px;
+      @include flex(row wrap, center);
+      max-width: 400px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  #rapports {
+    @include flex(column wrap, center);
+    padding-left: 5px;
+    th,
+    td {
+      border: 1px solid $gold;
+    }
+    .rapport {
+
+      width: 100%;
+      table {
+        width: 100%;
+        margin-bottom: 20px;
+        thead {
+          tr {
+            th {
+              font-size: 18px;
+              text-align: center;
+            }
+            .titleTable {
+              font-size: 20px;
+            }
+          }
+        }
+        tbody {
+          tr {
+            td {
+              text-align: center;
+            }
+            .right {
+              text-align: right;
+              padding-right: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+

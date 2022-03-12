@@ -1,0 +1,137 @@
+first_picture_attachment:
+  name: picture
+  record_id: 1
+  record_type: Champion
+  blob: abc
+
+second_picture_attachment:
+  name: picture
+  record_id: 2
+  record_type: Champion
+  blob: abc
+
+third_picture_attachment:
+  name: picture
+  record_id: 3
+  record_type: Champion
+  blob: abc
+
+fourth_picture_attachment:
+  name: picture
+  record_id: 1
+  record_type: Skin
+  blob: abc
+
+fifth_picture_attachment:
+  name: picture
+  record_id: 2
+  record_type: Skin
+  blob: abc
+
+sixth_picture_attachment:
+  name: picture
+  record_id: 3
+  record_type: Skin
+  blob: abc
+
+seven_picture_attachment:
+  name: picture
+  record_id: 1
+  record_type: Item
+  blob: abc
+
+eigth_picture_attachment:
+  name: picture
+  record_id: 2
+  record_type: Item
+  blob: abc
+
+nine_picture_attachment:
+  name: picture
+  record_id: 1
+  record_type: Rune
+  blob: abc
+
+ten_picture_attachment:
+  name: picture
+  record_id: 2
+  record_type: Rune
+  blob: abc
+
+eleven_picture_attachment:
+  name: picture
+  record_id: 3
+  record_type: Rune
+  blob: abc
+
+twelve_picture_attachment:
+  name: picture
+  record_id: 4
+  record_type: Rune
+  blob: abc
+
+thirteen_picture_attachment:
+  name: picture
+  record_id: 5
+  record_type: Rune
+  blob: abc
+
+fourteen_picture_attachment:
+  name: picture
+  record_id: 6
+  record_type: Rune
+  blob: abc
+
+fifteen_picture_attachment:
+  name: picture
+  record_id: 7
+  record_type: Rune
+  blob: abc
+
+sixteen_picture_attachment:
+  name: picture
+  record_id: 8
+  record_type: Rune
+  blob: abc
+
+seventeen_picture_attachment:
+  name: picture
+  record_id: 9
+  record_type: Rune
+  blob: abc
+
+eighteen_picture_attachment:
+  name: picture
+  record_id: 1
+  record_type: Category
+  blob: abc
+
+nineteen_picture_attachment:
+  name: picture
+  record_id: 2
+  record_type: Category
+  blob: abc
+
+twenty_picture_attachment:
+  name: picture
+  record_id: 3
+  record_type: Category
+  blob: abc
+
+twenty_one_picture_attachment:
+  name: picture
+  record_id: 1
+  record_type: User
+  blob: abc
+
+twenty_two_picture_attachment:
+  name: picture
+  record_id: 2
+  record_type: User
+  blob: abc
+
+twenty_three_picture_attachment:
+  name: picture
+  record_id: 3
+  record_type: User
+  blob: abc

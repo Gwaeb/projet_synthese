@@ -1,0 +1,147 @@
+<div class="pageTitle">
+  <h1>
+    Liste de souhaits des champions <i class="fas fa-plus" (click)="add()"></i>
+  </h1>
+</div>
+<div class="contentBody">
+  <div class="menuContent content">
+    <form>
+      <div id="searchWrapper">
+        <input
+          class="search"
+          type="search"
+          placeholder="Recherche..."
+          #name
+          (input)="nameChange(name.value)"
+        />
+      </div>
+      <div id="sortWrapper">
+        <h3>Trier (ascendant):</h3>
+
+        <label for="noSortSelected"
+          ><input
+            type="radio"
+            id="noSortSelected"
+            name="sort"
+            value="noSortSelected"
+            checked="checked"
+            #sort0
+            (input)="sortChange(sort0.value)"
+          />Date d'insertion</label
+        >
+
+        <label for="position"
+          ><input
+            type="radio"
+            id="position"
+            name="sort"
+            value="0"
+            #sort1
+            (input)="sortChange(sort1.value)"
+          />Position</label
+        >
+
+        <label for="price"
+          ><input
+            type="radio"
+            id="price"
+            name="sort"
+            value="1"
+            #sort2
+            (input)="sortChange(sort2.value)"
+          />Prix</label
+        >
+      </div>
+      <div id="filterWrapper">
+        <h3>Filtrer:</h3>
+
+        <label for="noFilterSelected"
+          ><input
+            type="radio"
+            id="noFilterSelected"
+            name="filter"
+            value="null"
+            checked="checked"
+            #filter1
+            (input)="filterChange(filter1.value)"
+          />Aucun</label
+        >
+
+        <label for="top"
+          ><input
+            type="radio"
+            id="top"
+            name="filter"
+            value="0"
+            #filter2
+            (input)="filterChange(filter2.value)"
+          />Haut</label
+        >
+
+        <label for="jungle"
+          ><input
+            type="radio"
+            id="jungle"
+            name="filter"
+            value="1"
+            #filter3
+            (input)="filterChange(filter3.value)"
+          />Jungle</label
+        >
+
+        <label for="mid"
+          ><input
+            type="radio"
+            id="mid"
+            name="filter"
+            value="2"
+            #filter4
+            (input)="filterChange(filter4.value)"
+          />Milieu</label
+        >
+
+        <label for="bot"
+          ><input
+            type="radio"
+            id="bot"
+            name="filter"
+            value="3"
+            #filter5
+            (input)="filterChange(filter5.value)"
+          />Bas</label
+        >
+
+        <label for="support"
+          ><input
+            type="radio"
+            id="support"
+            name="filter"
+            value="4"
+            #filter6
+            (input)="filterChange(filter6.value)"
+          />Support</label
+        >
+      </div>
+      <div id="sliderWrapper">
+        <h3>Prix: 450 - {{ filterPrice || 7800 }}</h3>
+        <input
+          type="range"
+          min="450"
+          max="7800"
+          value="7800"
+          class="slider"
+          id="myRange"
+          #ranger
+          (input)="priceChange(ranger.value)"
+        />
+        <div class="textsPrice">
+          <span>450</span>
+          <span>7800</span>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div id="route">
+    <router-outlet></router-outlet>
+  </div>
+</div>

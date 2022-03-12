@@ -1,0 +1,6 @@
+@import "../../../../variables.scss";
+@import "../../../../mixins.scss";
+
+#skin_list {
+  @include flex(row wrap, center);
+}

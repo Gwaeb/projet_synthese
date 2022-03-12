@@ -1,0 +1,5 @@
+@import "../../../../variables.scss";
+@import "../../../../mixins.scss";
+#matches_list {
+  @include flex(row wrap, center);
+}
